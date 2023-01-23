@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+body{
+  padding-top: 60px;
+}
+.card{
+  border-radius: 6px;
+  padding: 12px;
+  border:0.5px solid grey;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card img{
+  width: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar{
+  padding-left: 12px !important;
+  padding-right: 12px !important;
   display: flex;
-  flex-direction: column;
+  z-index: 100 !important;
+  justify-content: space-between;
+  position: fixed;
+  top: 0px !important;
+  width: 98%;
   align-items: center;
+  height: 60px;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2) !important;
+}
+
+.counter{
+  background-color: red !important;
+  color: #fff !important;
+  width: 18px !important;
+  height: 18px !important;
+  position: absolute;
+ margin-top: -8px;
+ margin-left: 8px;
+  font-size: 13px !important;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border-radius: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.cartCard{
+  border-radius: 6px;
+  padding: 12px;
+  border:0.5px solid grey;
+  width: 300px !important;
+}
+.cartCard img{
+  width: 100px !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cartGrid{
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  column-gap: 5% !important;
 }

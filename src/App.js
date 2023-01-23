@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import ProductList from './pages/productList';
+import CartList from './pages/CartList';
+import React, { useState } from 'react';
+export const cartContext = React.createContext()
 function App() {
+  const [cartList,setCartList]=useState([])
+  const movecart=(msg)=>{
+    setCartList(msg)
+  }
+
+  const value = React.useMemo(() => ({
+    cartList, setCartList
+  }), [cartList]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <cartContext.Provider value={ value }> 
+    <>
+      <BrowserRouter>
+         <Routes>
+           <Route exact path="/" element={<ProductList addCart={movecart}/>}></Route>
+           <Route exact path="/cartlist" element={<CartList/>}></Route>
+         </Routes>
+
+      </BrowserRouter>
+    
+    </>
+    </cartContext.Provider>
   );
 }
 
